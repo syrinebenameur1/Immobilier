@@ -6,12 +6,10 @@ function HomePage() {
     <div className="homePage">
       <div className="textContainer">
         <div className="wrapper">
-          <h1 className="title">Find Real Estate & Get Your Dream Place</h1>
+          <h1 className="title">TrustHome: Your No. 1 Choice for Safe Renting and Buying </h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-            explicabo suscipit cum eius, iure est nulla animi consequatur
-            facilis id pariatur fugit quos laudantium temporibus dolor ea
-            repellat provident impedit!
+          Start your journey towards finding the perfect property today with our dedicated team ready to assist you in making informed decisions that match your lifestyle and aspirations.
+          Trust in our commitment to transparency and security, offering verified property information and secure transactions for your peace of mind.
           </p>
           <SearchBar />
           <div className="boxes">
@@ -31,7 +29,7 @@ function HomePage() {
         </div>
       </div>
       <div className="imgContainer">
-        <img src="/bg.png" alt="" />
+      <img src="https://i.pinimg.com/564x/1a/1a/21/1a1a218cfcb499b77bbbb03575f12267.jpg" alt=""  />
       </div>
     </div>
   );

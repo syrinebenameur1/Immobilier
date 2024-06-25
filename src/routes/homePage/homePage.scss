@@ -61,22 +61,37 @@
 
   .imgContainer {
     flex: 2;
-    background-color: #fcf5f3;
     position: relative;
     display: flex;
     align-items: center;
+    margin-right: 100px;
+
+
+
 
     @include md {
       display: none;
     }
 
     img {
-      width: 115%;
-      position: absolute;
+      width: 80%;
+      height: 80%;
+      position:absolute;
       right: 0;
+      left: 0;
+      border-radius: 2%;
+      transition: filter 0.3s ease;
+      filter: grayscale(0%);
+
+
+  &:hover {
+  filter: blur(1px);
+
+  filter: grayscale(100%);
+  }
 
       @include lg {
-        width: 105%;
+        width: 100%;
       }
     }
   }

@@ -10,22 +10,24 @@ function Navbar() {
     <nav>
       <div className="left">
         <a href="/" className="logo">
-          <img src="/logo.png" alt="" />
-          <span>LamaEstate</span>
+          <img src="https://www.shutterstock.com/image-vector/house-logo-template-design-vector-600nw-741515455.jpg" alt="" />
+          <span>TrustHome</span>
         </a>
+
         <a href="/">Home</a>
         <a href="/">About</a>
         <a href="/">Contact</a>
         <a href="/">Agents</a>
+
       </div>
       <div className="right">
         {user ? (
           <div className="user">
             <img
-              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src="https://wallpapers-clan.com/wp-content/uploads/2023/01/dark-aesthetic-girl-pfp-10.jpg"
               alt=""
             />
-            <span>John Doe</span>
+            <span>Syrine</span>
             <Link to="/profile" className="profile">
               <div className="notification">3</div>
               <span>Profile</span>
