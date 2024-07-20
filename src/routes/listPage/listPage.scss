@@ -17,6 +17,21 @@
       overflow-y: scroll;
       padding-bottom: 50px;
     }
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+
+
+::-webkit-scrollbar-thumb {
+  background: #a0a0a0; /* Medium gray color for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid #f0f0f0; /* Adds space around the thumb */
+}
+
+
+
   }
   .mapContainer {
     flex: 2;

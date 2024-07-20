@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import noAvatarImage from "./../../../public/noavatar.jpg"
+
 
 function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const user = true;
+  const {currentUser} = useContext(AuthContext);
+
   return (
     <nav>
       <div className="left">
@@ -21,13 +25,13 @@ function Navbar() {
 
       </div>
       <div className="right">
-        {user ? (
+        {currentUser ? (
           <div className="user">
             <img
-              src="https://wallpapers-clan.com/wp-content/uploads/2023/01/dark-aesthetic-girl-pfp-10.jpg"
+              src={currentUser ? currentUser.avatar : noAvatarImage}
               alt=""
             />
-            <span>Syrine</span>
+            <span>{currentUser.username}</span>
             <Link to="/profile" className="profile">
               <div className="notification">3</div>
               <span>Profile</span>
@@ -35,15 +39,17 @@ function Navbar() {
           </div>
         ) : (
           <>
-            <a href="/">Sign in</a>
-            <a href="/" className="register">
+          <div className="sign">
+            <a href="/login">Sign in</a>
+            <a href="/register" className="register">
               Sign up
             </a>
+            </div>
           </>
         )}
         <div className="menuIcon">
           <img
-            src="/menu.png"
+            src={currentUser ? currentUser.avatar : "/noavatar.jpg"}
             alt=""
             onClick={() => setOpen((prev) => !prev)}
           />
@@ -53,8 +59,8 @@ function Navbar() {
           <a href="/">About</a>
           <a href="/">Contact</a>
           <a href="/">Agents</a>
-          <a href="/">Sign in</a>
-          <a href="/">Sign up</a>
+          <a href="/register">Sign in</a>
+          <a href="/login">Sign up</a>
         </div>
       </div>
     </nav>

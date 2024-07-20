@@ -110,9 +110,18 @@ gap: 50px;
 
       }
     }
+.sign{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  white-space: nowrap;
+  gap: 70ox;
 
+
+}
     .register {
       background-color: #fece51;
+      border-radius: 5px;
     }
 
     .menuIcon {

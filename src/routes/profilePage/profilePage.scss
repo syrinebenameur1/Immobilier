@@ -7,7 +7,9 @@
   @include md{
     flex-direction: column;
     overflow: scroll;
+    
   }
+  
 
   .details {
     flex: 3;
@@ -53,6 +55,16 @@
           gap: 20px;
         }
 
+        button{
+          width: 100px;
+          background-color: rgb(221, 17, 17);
+          color:white;
+          border:none;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+
         img{
           width: 40px;
           height: 40px;
@@ -77,4 +89,16 @@
       height: 100%;
     }
   }
+}
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+
+
+::-webkit-scrollbar-thumb {
+  background: #a0a0a0; /* Medium gray color for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid #f0f0f0; /* Adds space around the thumb */
 }
