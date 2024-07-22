@@ -3,6 +3,7 @@ import "./profileUpdatePage.scss";
 import { AuthContext } from "./../../context/AuthContext";
 import { Navigate, useNavigate } from "react-router-dom";
 import UploadWidget from "../../components/uploadWidget/UploadWidget"
+import axiosInstance from "../../axiosInstance/axios";
 
 function ProfileUpdatePage() {
   const { currentUser, updateUser } = useContext(AuthContext);
@@ -10,17 +11,26 @@ function ProfileUpdatePage() {
   const [error, setError] = useState("");
   const [avatar, setAvatar] = useState([]);
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const updatedUser = {
-      username: formData.get("username"),
-      email: formData.get("email"),
-      password: formData.get("password"),
-      avatar:avatar[0],
-    };
-    updateUser(updatedUser);
-    navigate("/profile");
+
+    const { username, email, password } = Object.fromEntries(formData);
+
+    try {
+      const res = await axiosInstance.put(`/users/${currentUser.id}`, {
+        username,
+        email,
+        password,
+        avatar:avatar[0]
+      });
+      updateUser(res.data);
+      navigate("/profile");
+    } catch (err) {
+      console.log(err);
+      setError(err.response.data.message);
+    }
   };
 
   return (

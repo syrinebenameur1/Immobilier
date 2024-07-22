@@ -45,6 +45,7 @@ function NewPostPage() {
         postData,
         postDetail
       });
+      console.log("Response:", response.data);
 
       navigate("/" + response.data.id); // Change this to the desired route after successful creation
     } catch (err) {
